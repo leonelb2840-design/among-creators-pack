@@ -1,0 +1,44 @@
+{
+  "name": "Among Creators Pack",
+  "short_name": "Among Creators",
+  "description": "Pack de recursos para creadores de contenido de Among Us: memes, pinceles, plantillas, músicas, efectos, fondos, texturas, artes conceptuales y mucho más. Proyecto de fans bajo CC BY-SA y la política de Innersloth.",
+  "lang": "es",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#0b0f1c",
+  "theme_color": "#0b0f1c",
+  "categories": ["entertainment", "games", "utilities", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Descargar V2",
+      "short_name": "Descargar",
+      "description": "Descargar la última versión del pack",
+      "url": "./index.html#descargar"
+    },
+    {
+      "name": "Enviar feedback",
+      "short_name": "Feedback",
+      "description": "Enviar sugerencias, reportes o calificación",
+      "url": "./index.html#feedback"
+    },
+    {
+      "name": "Gracias internas",
+      "short_name": "Gracias",
+      "description": "Agradecimientos internos del equipo",
+      "url": "./gracias.html"
+    }
+  ]
+}
