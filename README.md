@@ -129,14 +129,14 @@ También puedes abrir un [issue](../../issues) en este repositorio.
 
 | Versión | Fecha | Notas |
 |---------|-------|-------|
-| **V2** | 2026 | Versión actual con página web, PWA y formulario de feedback |
-| **V1** | 20-24 agosto 2026 | Primera versión completa y oficial |
+| **V2** | 30/09-01/10/2026 | Versión actual con página web, PWA y formulario de feedback |
+| **V1** | 20-24/08/2026 | Primera versión completa y oficial |
 
 ---
 
 ## 👥 Créditos
 
-- **Creador original**: [LeonelB2840](https://github.com/LeonelB2840)
+- **Creador original**: [LeonelB2840](https://github.com/leonelb2840-design)
 - **Equipo**: ver [`gracias.md`](./gracias.md)
 - **Comunidad**: gracias a todos los que descargan, comparten y aportan.
 
