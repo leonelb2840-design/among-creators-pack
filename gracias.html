@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias internas · Among Creators Pack</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0b0f1c">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: radial-gradient(circle at 20% 30%, #0b0f1c, #03050a);
+            min-height: 100vh;
+            font-family: 'Space Grotesk', sans-serif;
+            padding: 2rem 1.5rem;
+            color: #e0ecff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: 
+                radial-gradient(2px 2px at 10% 20%, #fff, transparent),
+                radial-gradient(2px 2px at 85% 45%, #fff, transparent),
+                radial-gradient(3px 3px at 30% 70%, #fff8, transparent),
+                radial-gradient(2px 2px at 70% 15%, #fff, transparent),
+                radial-gradient(3px 3px at 95% 80%, #fff6, transparent),
+                radial-gradient(2px 2px at 45% 55%, #fff, transparent),
+                radial-gradient(2px 2px at 5% 90%, #fff, transparent),
+                radial-gradient(3px 3px at 60% 95%, #fff8, transparent);
+            background-repeat: no-repeat;
+            pointer-events: none;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 780px;
+            width: 100%;
+            background: rgba(8, 14, 28, 0.78);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(90, 150, 255, 0.25);
+            border-radius: 3rem;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(60, 130, 255, 0.1) inset;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #8bb2ff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1.2rem;
+            background: rgba(50, 102, 192, 0.2);
+            border: 1px solid #3266c0;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background: #3266c0;
+            color: white;
+            transform: translateX(-3px);
+        }
+
+        .markdown-body h1 {
+            font-size: 2.4rem;
+            color: #eef5ff;
+            text-shadow: 0 0 20px #3e7eff, 0 0 5px #9ac0ff;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            border-bottom: 2px dashed rgba(120, 170, 255, 0.3);
+            padding-bottom: 1rem;
+        }
+
+        .markdown-body h2 {
+            font-size: 1.6rem;
+            color: #8bb2ff;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-shadow: 0 0 10px rgba(90, 158, 255, 0.4);
+        }
+
+        .markdown-body h3 {
+            font-size: 1.25rem;
+            color: #b8d0ff;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .markdown-body p {
+            color: #d0e2ff;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .markdown-body strong { color: #ffd966; font-weight: 700; }
+        .markdown-body em { color: #b8d0ff; font-style: italic; }
+
+        .markdown-body a {
+            color: #ffb0ff;
+            text-decoration: none;
+            border-bottom: 1px dashed #ffb0ff;
+            transition: 0.2s;
+        }
+
+        .markdown-body a:hover { color: #ffd6ff; border-bottom-color: #ffd6ff; }
+
+        .markdown-body ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        .markdown-body ul li {
+            color: #d0e2ff;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            position: relative;
+        }
+
+        .markdown-body ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 0.3rem;
+            top: 0.4rem;
+            color: #5a9eff;
+            font-size: 1rem;
+            filter: drop-shadow(0 0 6px #3e7eff);
+        }
+
+        .markdown-body blockquote {
+            border-left: 5px solid #5a9eff;
+            background: rgba(90, 158, 255, 0.08);
+            border-radius: 0 1.2rem 1.2rem 0;
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            color: #b8d0ff;
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            box-shadow: 0 0 20px rgba(90, 158, 255, 0.1);
+        }
+
+        .markdown-body hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #3e7eff, transparent);
+            margin: 2.5rem 0;
+            box-shadow: 0 0 10px #3e7eff;
+        }
+
+        .markdown-body code {
+            background: rgba(90, 158, 255, 0.15);
+            color: #ffd966;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        .loading {
+            text-align: center;
+            color: #8bb2ff;
+            padding: 3rem 0;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(90, 158, 255, 0.3);
+            border-top-color: #5a9eff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-left: 0.8rem;
+            vertical-align: middle;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .error-msg {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid #ff6b6b;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            color: #ffc0c0;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 2rem 1.5rem; border-radius: 2rem; }
+            .markdown-body h1 { font-size: 1.8rem; }
+            .markdown-body h2 { font-size: 1.35rem; }
+            .markdown-body p, .markdown-body ul li { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al inicio</a>
+
+        <div id="content">
+            <div class="loading">Cargando agradecimientos</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        (async () => {
+            const content = document.getElementById('content');
+
+            try {
+                const response = await fetch('gracias.md');
+                if (!response.ok) throw new Error('No se pudo cargar gracias.md');
+
+                const markdown = await response.text();
+                const html = marked.parse(markdown);
+
+                content.innerHTML = `<div class="markdown-body">${html}</div>`;
+
+                document.querySelectorAll('.markdown-body h2').forEach(h2 => {
+                    const text = h2.textContent.toLowerCase();
+                    if (text.includes('mí mismo') || text.includes('mi mismo')) {
+                        h2.innerHTML = '💙 ' + h2.innerHTML;
+                    } else if (text.includes('equipo')) {
+                        h2.innerHTML = '🤝 ' + h2.innerHTML;
+                    } else if (text.includes('comunidad')) {
+                        h2.innerHTML = '🎮 ' + h2.innerHTML;
+                    } else if (text.includes('nota')) {
+                        h2.innerHTML = '🚀 ' + h2.innerHTML;
+                    }
+                });
+            } catch (err) {
+                console.error(err);
+                content.innerHTML = `
+                    <div class="error-msg">
+                        ⚠️ No se pudieron cargar los agradecimientos.<br>
+                        <small>${err.message}</small>
+                    </div>
+                `;
+            }
+        })();
+    </script>
+</body>
+  </html>
