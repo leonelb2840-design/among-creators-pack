@@ -1,0 +1,86 @@
+# =====================================================
+# .gitignore · Among Creators Pack
+# =====================================================
+
+# ---- Sistema operativo ----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ---- Editores / IDEs ----
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# ---- Logs ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---- Dependencias (por si algún día usas build tools) ----
+node_modules/
+bower_components/
+jspm_packages/
+.pnp
+.pnp.js
+
+# ---- Build / dist ----
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+public/build/
+
+# ---- Variables de entorno ----
+.env
+.env.local
+.env.*.local
+*.env
+
+# ---- Archivos temporales ----
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# ---- Archivos personales / privados ----
+# Descomenta y añade los que quieras ignorar personalmente
+# notas.txt
+# ideas.md
+# borradores/
+
+# ---- Archivos pesados que no queremos subir ----
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.mp4
+*.mov
+*.avi
+*.psd
+*.ai
+*.sketch
+
+# ---- Backups ----
+*.bak
+*.backup
+*.old
+
+# ---- Windows (por si acaso) ----
+$RECYCLE.BIN/
+*.lnk
