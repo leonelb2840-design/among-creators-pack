@@ -54,16 +54,27 @@ El proyecto cuenta con una página web con las siguientes características:
 ### Estructura del proyecto
 
 among-creators-pack/
+
 ├── index.html → Página principal
+
 ├── gracias.html → Renderiza gracias.md con estilo
+
 ├── gracias.md → Agradecimientos internos del equipo
+
 ├── manifest.json → Configuración PWA
+
 ├── sw.js → Service Worker
+
 ├── offline.html → Página de respaldo offline
+
 ├── README.md → este archivo
+
 ├── LICENSE → Licencia CC BY-SA 4.0
+
 ├── .gitignore Archivos ignorados por GitHub
+
 └── icon.png → Icono de la PWA
+
 
 
 ---
