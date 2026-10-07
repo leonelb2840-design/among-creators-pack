@@ -15,7 +15,7 @@ const PRECACHE_URLS = [
   './gracias.html',
   './gracias.md',
   './manifest.json',
-  './icons/icon.png',
+  './icon.png',
   './offline.html'
 ];
 
