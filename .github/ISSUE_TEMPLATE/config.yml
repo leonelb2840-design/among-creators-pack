@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: 💬 Formulario de feedback en la web
+    url: https://leonelb2840-design.github.io/among-creators-pack/#feedback
+    about: Envía tu feedback rápido sin necesidad de tener cuenta de GitHub.
+
+  - name: 📖 Ver el historial de versiones
+    url: https://leonelb2840-design.github.io/among-creators-pack/
+    about: Consulta las versiones anteriores y sus cambios.
+
+  - name: 💙 Agradecimientos internos
+    url: https://leonelb2840-design.github.io/among-creators-pack/gracias.html
+    about: Conoce al equipo detrás del proyecto.
