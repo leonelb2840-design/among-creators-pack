@@ -1,1 +1,93 @@
+name: 🔔 Notificar a Discord
 
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [opened, closed, reopened]
+  issues:
+    types: [opened, closed, reopened]
+  release:
+    types: [published]
+  watch:
+    types: [started]
+
+jobs:
+  notify:
+    name: Enviar embed a Discord
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎨 Construir y enviar embed
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          # Elegir color según el evento
+          case "${{ github.event_name }}" in
+            push)          COLOR=3447003 ;;   # azul
+            pull_request)  COLOR=10181046 ;;  # morado
+            issues)        COLOR=15844367 ;;  # amarillo
+            release)       COLOR=5763719 ;;   # verde
+            watch)         COLOR=16766720 ;;  # naranja (star)
+            *)             COLOR=9807270 ;;   # gris
+          esac
+
+          # Elegir emoji según el evento
+          case "${{ github.event_name }}" in
+            push)          EMOJI="🚀" ;;
+            pull_request)  EMOJI="🔀" ;;
+            issues)        EMOJI="📋" ;;
+            release)       EMOJI="🎁" ;;
+            watch)         EMOJI="⭐" ;;
+            *)             EMOJI="🔔" ;;
+          esac
+
+          # Título dinámico según el evento
+          case "${{ github.event_name }}" in
+            push)          TITLE="Nuevo push en ${{ github.repository }}" ;;
+            pull_request)  TITLE="Pull Request en ${{ github.repository }}" ;;
+            issues)        TITLE="Nuevo issue en ${{ github.repository }}" ;;
+            release)       TITLE="Nueva release publicada" ;;
+            watch)         TITLE="¡Alguien le dio estrella al repo!" ;;
+            *)             TITLE="Nueva actividad en el repo" ;;
+          esac
+
+          # Descripción según evento
+          DESC="${{ github.event.head_commit.message || github.event.issue.title || github.event.pull_request.title || github.event.release.name || 'Actividad reciente' }}"
+          DESC=$(echo "$DESC" | head -c 200)  # máximo 200 caracteres
+
+          # URL según evento
+          URL="${{ github.event.head_commit.url || github.event.issue.html_url || github.event.pull_request.html_url || github.event.release.html_url || github.event.repository.html_url }}"
+
+          # Construir JSON (usando jq para escapar bien)
+          PAYLOAD=$(jq -n \
+            --arg title "$EMOJI $TITLE" \
+            --arg desc "$DESC" \
+            --arg url "$URL" \
+            --arg actor "${{ github.actor }}" \
+            --arg avatar "https://github.com/${{ github.actor }}.png" \
+            --arg repo "${{ github.repository }}" \
+            --argjson color "$COLOR" \
+            '{
+              embeds: [{
+                title: $title,
+                description: $desc,
+                url: $url,
+                color: $color,
+                author: {
+                  name: $actor,
+                  icon_url: $avatar,
+                  url: "https://github.com/\($actor)"
+                },
+                footer: {
+                  text: "Among Creators Pack · \($repo)",
+                  icon_url: "https://github.com/\($repo.split(\"/\")[0]).png"
+                },
+                timestamp: (now | todate)
+              }]
+            }')
+
+          # Enviar a Discord
+          curl -X POST "$DISCORD_WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" \
+            -w "\n✅ HTTP Status: %{http_code}\n"
