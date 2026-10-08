@@ -1,0 +1,172 @@
+name: 📊 Resumen semanal a Discord
+
+on:
+  schedule:
+    # Todos los lunes a las 13:00 UTC = 9:00 AM Venezuela (UTC-4)
+    - cron: '0 13 * * 1'
+  workflow_dispatch:  # Permite ejecutarlo manualmente desde la pestaña Actions
+
+jobs:
+  weekly-summary:
+    name: Enviar resumen de la semana
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout del repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Necesario para obtener todo el historial de commits
+
+      - name: 📊 Recopilar estadísticas de la semana
+        id: stats
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fecha de hace 7 días en formato ISO
+          SINCE=$(date -u -d '7 days ago' +%Y-%m-%dT%H:%M:%SZ)
+
+          # === COMMITS ===
+          COMMITS=$(git log --since="$SINCE" --oneline | wc -l | tr -d ' ')
+          CONTRIBUTORS=$(git log --since="$SINCE" --format='%an' | sort -u | wc -l | tr -d ' ')
+
+          # === ISSUES ABIERTOS/CERRADOS EN LA SEMANA ===
+          ISSUES_OPENED=$(gh issue list --state all --search "created:>=$SINCE" --json number --jq 'length' 2>/dev/null || echo "0")
+          ISSUES_CLOSED=$(gh issue list --state closed --search "closed:>=$SINCE" --json number --jq 'length' 2>/dev/null || echo "0")
+
+          # === PRs ABIERTOS/CERRADOS EN LA SEMANA ===
+          PRS_OPENED=$(gh pr list --state all --search "created:>=$SINCE" --json number --jq 'length' 2>/dev/null || echo "0")
+          PRS_CLOSED=$(gh pr list --state closed --search "closed:>=$SINCE" --json number --jq 'length' 2>/dev/null || echo "0")
+
+          # === STARS NUEVAS EN LA SEMANA ===
+          # GitHub no tiene API directa para esto, así que leemos los stargazers con fecha
+          STARS_TOTAL=$(gh api repos/${{ github.repository }} --jq '.stargazers_count' 2>/dev/null || echo "0")
+
+          # === ÚLTIMOS COMMITS DE LA SEMANA (máximo 5) ===
+          RECENT_COMMITS=$(git log --since="$SINCE" --pretty=format:"• \`%h\` %s — _%an_" | head -5)
+          if [ -z "$RECENT_COMMITS" ]; then
+            RECENT_COMMITS="• Sin commits esta semana"
+          fi
+
+          # === GUARDAR EN OUTPUTS ===
+          echo "commits=$COMMITS" >> $GITHUB_OUTPUT
+          echo "contributors=$CONTRIBUTORS" >> $GITHUB_OUTPUT
+          echo "issues_opened=$ISSUES_OPENED" >> $GITHUB_OUTPUT
+          echo "issues_closed=$ISSUES_CLOSED" >> $GITHUB_OUTPUT
+          echo "prs_opened=$PRS_OPENED" >> $GITHUB_OUTPUT
+          echo "prs_closed=$PRS_CLOSED" >> $GITHUB_OUTPUT
+          echo "stars_total=$STARS_TOTAL" >> $GITHUB_OUTPUT
+
+          # Guardar commits en un archivo temporal (por los saltos de línea)
+          echo "$RECENT_COMMITS" > /tmp/recent_commits.txt
+
+      - name: 📅 Calcular fechas de la semana
+        id: dates
+        run: |
+          END_DATE=$(date -u +"%d/%m/%Y")
+          START_DATE=$(date -u -d '7 days ago' +"%d/%m/%Y")
+          echo "start=$START_DATE" >> $GITHUB_OUTPUT
+          echo "end=$END_DATE" >> $GITHUB_OUTPUT
+
+      - name: 🎨 Construir y enviar embed a Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          COMMITS: ${{ steps.stats.outputs.commits }}
+          CONTRIBUTORS: ${{ steps.stats.outputs.contributors }}
+          ISSUES_OPENED: ${{ steps.stats.outputs.issues_opened }}
+          ISSUES_CLOSED: ${{ steps.stats.outputs.issues_closed }}
+          PRS_OPENED: ${{ steps.stats.outputs.prs_opened }}
+          PRS_CLOSED: ${{ steps.stats.outputs.prs_closed }}
+          STARS_TOTAL: ${{ steps.stats.outputs.stars_total }}
+          START_DATE: ${{ steps.dates.outputs.start }}
+          END_DATE: ${{ steps.dates.outputs.end }}
+          REPO: ${{ github.repository }}
+        run: |
+          # Leer los commits recientes
+          RECENT_COMMITS=$(cat /tmp/recent_commits.txt)
+
+          # Colores según actividad
+          if [ "$COMMITS" -ge 10 ]; then
+            COLOR=5763719  # verde (muy activa)
+            MOOD="🔥 ¡Semana muy activa!"
+          elif [ "$COMMITS" -ge 3 ]; then
+            COLOR=3447003  # azul (activa)
+            MOOD="✨ Buena actividad esta semana"
+          elif [ "$COMMITS" -ge 1 ]; then
+            COLOR=16776960  # amarillo (tranquila)
+            MOOD="🌙 Semana tranquila"
+          else
+            COLOR=9807270  # gris (sin actividad)
+            MOOD="😴 Sin actividad esta semana"
+          fi
+
+          # Construir el payload JSON con jq
+          PAYLOAD=$(jq -n \
+            --arg title "📊 Resumen semanal · Among Creators Pack" \
+            --arg desc "$MOOD\n\n**Período:** $START_DATE → $END_DATE" \
+            --arg commits "$COMMITS" \
+            --arg contributors "$CONTRIBUTORS" \
+            --arg issues_opened "$ISSUES_OPENED" \
+            --arg issues_closed "$ISSUES_CLOSED" \
+            --arg prs_opened "$PRS_OPENED" \
+            --arg prs_closed "$PRS_CLOSED" \
+            --arg stars "$STARS_TOTAL" \
+            --arg recent "$RECENT_COMMITS" \
+            --arg repo "$REPO" \
+            --argjson color "$COLOR" \
+            '{
+              username: "Among Creators · Resumen",
+              avatar_url: "https://github.com/\($repo.split(\"/\")[0]).png",
+              embeds: [{
+                title: $title,
+                description: $desc,
+                color: $color,
+                fields: [
+                  {
+                    name: "📈 Actividad",
+                    value: "**Commits:** `\($commits)`\n**Contribuidores:** `\($contributors)`",
+                    inline: true
+                  },
+                  {
+                    name: "📋 Issues",
+                    value: "**Abiertos:** `\($issues_opened)`\n**Cerrados:** `\($issues_closed)`",
+                    inline: true
+                  },
+                  {
+                    name: "🔀 Pull Requests",
+                    value: "**Abiertos:** `\($prs_opened)`\n**Cerrados:** `\($prs_closed)`",
+                    inline: true
+                  },
+                  {
+                    name: "⭐ Estrellas totales",
+                    value: "`\($stars)`",
+                    inline: true
+                  },
+                  {
+                    name: "📝 Últimos commits de la semana",
+                    value: $recent,
+                    inline: false
+                  }
+                ],
+                footer: {
+                  text: "Among Creators Pack · Resumen automático",
+                  icon_url: "https://github.com/\($repo.split(\"/\")[0]).png"
+                },
+                timestamp: (now | todate)
+              }]
+            }')
+
+          # Enviar a Discord
+          HTTP_CODE=$(curl -s -o /tmp/discord_response.txt -w "%{http_code}" \
+            -X POST "$DISCORD_WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD")
+
+          echo "✅ HTTP Status: $HTTP_CODE"
+
+          if [ "$HTTP_CODE" != "204" ] && [ "$HTTP_CODE" != "200" ]; then
+            echo "❌ Error al enviar a Discord:"
+            cat /tmp/discord_response.txt
+            exit 1
+          fi
+
+          echo "🎉 Resumen enviado correctamente"
