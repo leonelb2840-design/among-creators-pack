@@ -1,0 +1,105 @@
+name: 📦 Aportar un recurso
+description: Comparte memes, pinceles, plantillas, músicas, texturas y más con la comunidad
+title: "[Aporte] "
+labels: ["aporte-recurso", "community"]
+assignees:
+  - leonelb2840-design
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por querer aportar al pack! 🎁
+        
+        Recuerda que al enviar un recurso aceptas que se distribuya bajo la licencia del proyecto:
+        **[Creative Commons BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)**.
+
+  - type: dropdown
+    id: categoria
+    attributes:
+      label: ¿Qué tipo de recurso es?
+      options:
+        - 🎭 Meme
+        - 🖌️ Pincel
+        - 🧩 Plantilla para personaje / foto de perfil
+        - 🎵 Música
+        - 🔊 Efecto de sonido
+        - 🖼️ Fondo
+        - ✨ Textura para miniaturas
+        - 👾 Impostor personalizado
+        - 🎨 Arte conceptual
+        - ❓ Otro
+    validations:
+      required: true
+
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre del recurso
+      description: Un nombre descriptivo para identificarlo
+      placeholder: "Ej: Plantilla de crewmate rojo con sombrero"
+    validations:
+      required: true
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción
+      description: Describe el recurso, para qué sirve, cómo se usa, etc.
+      placeholder: "Esta plantilla es ideal para hacer avatares de personajes de Among Us con estilo kawaii..."
+    validations:
+      required: true
+
+  - type: input
+    id: enlace
+    attributes:
+      label: Enlace de descarga
+      description: Sube el recurso a Drive, Dropbox, Mega o similar y pega el enlace aquí
+      placeholder: "https://drive.google.com/file/d/..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: preview
+    attributes:
+      label: Preview / miniatura
+      description: Arrastra aquí una imagen de vista previa del recurso
+      placeholder: "Arrastra una imagen aquí..."
+    validations:
+      required: false
+
+  - type: input
+    id: autor
+    attributes:
+      label: Autor del recurso
+      description: ¿Quién lo ha creado? Si eres tú, escribe tu nombre o usuario.
+      placeholder: "Ej: leonelb2840-design o anónimo"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: licencia
+    attributes:
+      label: Licencia del recurso
+      description: ¿Bajo qué licencia cedes el recurso al proyecto?
+      options:
+        - ✅ Acepto CC BY-SA 4.0 (misma que el proyecto)
+        - 🔓 Dominio público (CC0)
+        - ⚠️ Otro (especifícalo en la descripción)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmaciones
+    attributes:
+      label: Confirmaciones importantes
+      options:
+        - label: Soy el autor original del recurso o tengo permiso del autor
+          required: true
+        - label: El recurso no infringe derechos de autor de terceros
+          required: true
+        - label: El recurso es apto para todos los públicos (sin NSFW, violencia, discriminación...)
+          required: true
+        - label: El recurso está relacionado con Among Us o con la temática del pack
+          required: true
+        - label: Acepto que el recurso se distribuya bajo la licencia del proyecto
+          required: true
