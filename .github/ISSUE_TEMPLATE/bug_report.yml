@@ -1,0 +1,99 @@
+name: 🐛 Reportar un error
+description: Algo no funciona correctamente en la web, el formulario o los recursos
+title: "[Bug] "
+labels: ["bug", "triage"]
+assignees:
+  - leonelb2840-design
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por tomarte el tiempo de reportar un bug! 🙏
+        Por favor, rellena el formulario con el máximo detalle posible.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: ¿Dónde ocurre el error?
+      description: Selecciona el área del proyecto afectada
+      options:
+        - 🌐 Página web
+        - 📦 Recursos del pack (archivos, assets)
+        - 💬 Formulario de feedback
+        - 📱 PWA / instalación en móvil
+        - 🔌 Modo offline
+        - 📜 Historial de versiones / CHANGELOG
+        - ❓ Otro
+    validations:
+      required: true
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción del error
+      description: ¿Qué pasa exactamente? Cuéntalo con tus palabras.
+      placeholder: "Ejemplo: cuando intento enviar el formulario desde el móvil, no me aparece el botón de enviar..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducirlo
+      description: ¿Cómo podemos hacer que nos pase lo mismo que a ti?
+      placeholder: |
+        1. Ir a la web
+        2. Pulsar en "Enviar feedback"
+        3. Rellenar los campos
+        4. Pulsar "Enviar"
+        5. El botón se queda cargando infinito
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamiento esperado
+      description: ¿Qué debería haber pasado en su lugar?
+      placeholder: "El formulario debería enviarse y mostrar el mensaje de éxito."
+    validations:
+      required: true
+
+  - type: input
+    id: dispositivo
+    attributes:
+      label: Dispositivo
+      description: ¿En qué dispositivo te ocurre?
+      placeholder: "Ej: Xiaomi Redmi Note 12 / Windows 11 / iPhone 14"
+    validations:
+      required: false
+
+  - type: input
+    id: navegador
+    attributes:
+      label: Navegador
+      description: ¿Qué navegador usas?
+      placeholder: "Ej: Chrome 120 / Firefox 121 / Safari 17"
+    validations:
+      required: false
+
+  - type: textarea
+    id: capturas
+    attributes:
+      label: Capturas o vídeos
+      description: Si puedes, arrastra aquí capturas de pantalla o vídeos del error
+      placeholder: "Arrastra los archivos aquí..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmaciones
+    attributes:
+      label: Confirmaciones
+      options:
+        - label: He buscado en issues anteriores y este bug no está reportado
+          required: true
+        - label: Estoy usando la versión más reciente del pack (V2)
+          required: true
+        - label: Acepto seguir la [política de fans de Innersloth](https://www.innersloth.com/fan-creation-policy/)
+          required: true
