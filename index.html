@@ -692,250 +692,237 @@
             background: rgba(62, 126, 255, 0.08);
         }
 
-.changelog-section {
-    background: linear-gradient(135deg, #1a1226, #0f0a18);
-    border-left: 6px solid #b06aff;
-    border-radius: 2rem;
-    padding: 2rem 2rem;
-    margin-bottom: 2.5rem;
-    box-shadow: 0 10px 25px -8px black, 0 0 0 1px #2a1a3a inset;
-}
-
-.changelog-label {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-    color: #d0a0ff;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-}
-
-.changelog-label svg {
-    width: 20px;
-    height: 20px;
-    fill: #b06aff;
-    filter: drop-shadow(0 0 6px #b06aff);
-}
-
-.version-picker {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 1.5rem;
-}
-
-.version-picker button {
-    background: rgba(176, 106, 255, 0.1);
-    border: 1px solid #7a3a7a;
-    border-radius: 50px;
-    padding: 0.55rem 1.3rem;
-    color: #d0a0ff;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    letter-spacing: 0.5px;
-}
-
-.version-picker button:hover {
-    background: rgba(176, 106, 255, 0.25);
-    border-color: #b06aff;
-    transform: translateY(-2px);
-}
-
-.version-picker button.active {
-    background: #b06aff;
-    border-color: #e0b0ff;
-    color: #1a0f2a;
-    box-shadow: 0 0 20px rgba(176, 106, 255, 0.5);
-}
-
-.version-detail {
-    background: rgba(20, 10, 35, 0.6);
-    border-radius: 1.5rem;
-    padding: 1.8rem 2rem;
-    border: 1px solid #3a2a5a;
-    color: #e0d0ff;
-    font-size: 1rem;
-    line-height: 1.7;
-    min-height: 200px;
-    animation: aparecer 0.4s ease;
-}
-
-.version-detail h3 {
-    color: #d0a0ff;
-    font-size: 1.4rem;
-    margin-bottom: 0.6rem;
-    text-shadow: 0 0 15px rgba(176, 106, 255, 0.4);
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-}
-
-.version-detail h3 .version-date {
-    font-size: 0.9rem;
-    color: #8a70a0;
-    font-weight: 400;
-    text-shadow: none;
-}
-
-.version-detail h4 {
-    color: #b8a0d0;
-    font-size: 1.1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.6rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    border-bottom: 1px dashed rgba(176, 106, 255, 0.3);
-    padding-bottom: 0.4rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.version-detail h4 .badge {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.7rem;
-    border-radius: 50px;
-    background: rgba(176, 106, 255, 0.2);
-    color: #d0a0ff;
-    text-transform: none;
-    letter-spacing: 0.5px;
-}
-
-.version-detail ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1rem;
-}
-
-.version-detail ul li {
-    color: #d0d0f0;
-    padding: 0.3rem 0 0.3rem 1.6rem;
-    position: relative;
-    line-height: 1.6;
-}
-
-.version-detail ul li::before {
-    content: '▸';
-    position: absolute;
-    left: 0.3rem;
-    color: #b06aff;
-    font-weight: 700;
-}
-
-.version-detail p {
-    color: #c0b0d8;
-    margin-bottom: 0.8rem;
-}
-
-.version-detail strong {
-    color: #ffd966;
-}
-
-.version-detail em {
-    color: #d0a0ff;
-    font-style: italic;
-}
-
-.version-detail a {
-    color: #ffb0ff;
-    text-decoration: none;
-    border-bottom: 1px dashed #ffb0ff;
-}
-
-.version-detail a:hover {
-    color: #ffd6ff;
-}
-
-.version-download {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: #7a3a7a;
-    color: white;
-    padding: 0.8rem 1.8rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    margin-top: 1rem;
-    border: 1px solid #b06aff;
-    box-shadow: 0 6px 0 #3a1a3a, 0 8px 20px black;
-    transition: 0.2s;
-}
-
-.version-download:hover {
-    background: #9a4a9a;
-    transform: scale(1.02);
-}
-
-.version-download:active {
-    transform: translateY(4px);
-    box-shadow: 0 2px 0 #3a1a3a, 0 8px 20px black;
-}
-
-.version-download.current {
-    background: #2a9a5a;
-    border-color: #5eff9a;
-    box-shadow: 0 6px 0 #0e4a28, 0 8px 20px black;
-}
-
-.version-download.current:hover {
-    background: #34b86a;
-}
-
-.version-download.old {
-    background: #4a3a5a;
-    border-color: #7a6a8a;
-    opacity: 0.9;
-    box-shadow: 0 6px 0 #2a1a3a, 0 8px 20px black;
-}
-
-.version-download.old:hover {
-    background: #5a4a6a;
-    opacity: 1;
-}
-
-.version-loading {
-    text-align: center;
-    color: #b06aff;
-    padding: 2rem 0;
-    font-size: 1rem;
-    letter-spacing: 1px;
-}
-
-.version-loading::after {
-    content: '';
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border: 3px solid rgba(176, 106, 255, 0.3);
-    border-top-color: #b06aff;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin-left: 0.8rem;
-    vertical-align: middle;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-@media (max-width: 600px) {
-    .changelog-section { padding: 1.5rem 1.2rem; }
-    .version-detail { padding: 1.3rem 1.3rem; font-size: 0.95rem; }
-    .version-detail h3 { font-size: 1.2rem; }
-    .version-picker button { font-size: 0.85rem; padding: 0.5rem 1rem; }
-    .version-download { width: 100%; justify-content: center; }
+        /* ===== HISTORIAL DE VERSIONES ===== */
+        .changelog-section {
+            background: linear-gradient(135deg, #1a1226, #0f0a18);
+            border-left: 6px solid #b06aff;
+            border-radius: 2rem;
+            padding: 2rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 25px -8px black, 0 0 0 1px #2a1a3a inset;
         }
-        
+
+        .changelog-label {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #d0a0ff;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .changelog-label svg {
+            width: 20px;
+            height: 20px;
+            fill: #b06aff;
+            filter: drop-shadow(0 0 6px #b06aff);
+        }
+
+        .version-picker {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .version-picker button {
+            background: rgba(176, 106, 255, 0.1);
+            border: 1px solid #7a3a7a;
+            border-radius: 50px;
+            padding: 0.55rem 1.3rem;
+            color: #d0a0ff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .version-picker button:hover {
+            background: rgba(176, 106, 255, 0.25);
+            border-color: #b06aff;
+            transform: translateY(-2px);
+        }
+
+        .version-picker button.active {
+            background: #b06aff;
+            border-color: #e0b0ff;
+            color: #1a0f2a;
+            box-shadow: 0 0 20px rgba(176, 106, 255, 0.5);
+        }
+
+        .version-detail {
+            background: rgba(20, 10, 35, 0.6);
+            border-radius: 1.5rem;
+            padding: 1.8rem 2rem;
+            border: 1px solid #3a2a5a;
+            color: #e0d0ff;
+            font-size: 1rem;
+            line-height: 1.7;
+            min-height: 200px;
+            animation: aparecer 0.4s ease;
+        }
+
+        .version-detail h3 {
+            color: #d0a0ff;
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+            text-shadow: 0 0 15px rgba(176, 106, 255, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .version-detail h3 .version-date {
+            font-size: 0.9rem;
+            color: #8a70a0;
+            font-weight: 400;
+            text-shadow: none;
+        }
+
+        .version-detail h4 {
+            color: #b8a0d0;
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed rgba(176, 106, 255, 0.3);
+            padding-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .version-detail h4 .badge {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            background: rgba(176, 106, 255, 0.2);
+            color: #d0a0ff;
+            text-transform: none;
+            letter-spacing: 0.5px;
+        }
+
+        .version-detail ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+
+        .version-detail ul li {
+            color: #d0d0f0;
+            padding: 0.3rem 0 0.3rem 1.6rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .version-detail ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0.3rem;
+            color: #b06aff;
+            font-weight: 700;
+        }
+
+        .version-detail p {
+            color: #c0b0d8;
+            margin-bottom: 0.8rem;
+        }
+
+        .version-detail strong { color: #ffd966; }
+        .version-detail em { color: #d0a0ff; font-style: italic; }
+        .version-detail code {
+            background: rgba(176, 106, 255, 0.15);
+            color: #ffd966;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .version-detail a {
+            color: #ffb0ff;
+            text-decoration: none;
+            border-bottom: 1px dashed #ffb0ff;
+        }
+
+        .version-detail a:hover { color: #ffd6ff; }
+
+        .version-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #7a3a7a;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            margin-top: 1rem;
+            border: 1px solid #b06aff;
+            box-shadow: 0 6px 0 #3a1a3a, 0 8px 20px black;
+            transition: 0.2s;
+        }
+
+        .version-download:hover {
+            background: #9a4a9a;
+            transform: scale(1.02);
+        }
+
+        .version-download:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #3a1a3a, 0 8px 20px black;
+        }
+
+        .version-download.current {
+            background: #2a9a5a;
+            border-color: #5eff9a;
+            box-shadow: 0 6px 0 #0e4a28, 0 8px 20px black;
+        }
+
+        .version-download.current:hover { background: #34b86a; }
+
+        .version-download.old {
+            background: #4a3a5a;
+            border-color: #7a6a8a;
+            opacity: 0.9;
+            box-shadow: 0 6px 0 #2a1a3a, 0 8px 20px black;
+        }
+
+        .version-download.old:hover { background: #5a4a6a; opacity: 1; }
+
+        .version-loading {
+            text-align: center;
+            color: #b06aff;
+            padding: 2rem 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .version-loading::after {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(176, 106, 255, 0.3);
+            border-top-color: #b06aff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-left: 0.8rem;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
         .offline-badge {
             position: fixed;
             bottom: 1rem;
@@ -976,6 +963,11 @@
             .feedback-submit { width: 100%; }
             .rating-options { justify-content: center; }
             .description-text ul { grid-template-columns: 1fr; }
+            .changelog-section { padding: 1.5rem 1.2rem; }
+            .version-detail { padding: 1.3rem 1.3rem; font-size: 0.95rem; }
+            .version-detail h3 { font-size: 1.2rem; }
+            .version-picker button { font-size: 0.85rem; padding: 0.5rem 1rem; }
+            .version-download { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -997,7 +989,7 @@
                 Descripción del proyecto
             </div>
             <div class="description-text">
-                <p><strong>Among Creators Pack</strong> es un paquete de recursos para creadores de contenido, enfocado principalmente en <strong>Among Us</strong>, aunque con el tiempo se ha ido expandiendo hacia otros ámbitos. Fue creado originalmente por <strong>LeonelB2840</strong>, con su desarrollo iniciado el <strong>19 de julio de 2026</strong> y su primera versión completa y oficial publicada entre el <strong>20 y el 24 de agosto de 2026</strong>.</p>
+                <p><strong>Among Creators Pack</strong> es un paquete de recursos para creadores de contenido, enfocado principalmente en <strong>Among Us</strong>, aunque con el tiempo se ha ido expandiendo hacia otros ámbitos. Fue creado originalmente por <strong>leonelb2840-design</strong>, con su desarrollo iniciado el <strong>19 de julio de 2026</strong> y su primera versión completa y oficial publicada entre el <strong>20 y el 24 de agosto de 2026</strong>.</p>
 
                 <p>Entre los recursos que incluye encontrarás:</p>
 
@@ -1028,21 +1020,23 @@
             </div>
         </div>
 
-        
-<div class="changelog-section">
-    <div class="changelog-label">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-        Historial de versiones
-    </div>
+        <!-- HISTORIAL DE VERSIONES -->
+        <div class="changelog-section">
+            <div class="changelog-label">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                Historial de versiones
+            </div>
 
-    <div class="version-picker" id="versionPicker">
-        <div class="version-loading">Cargando versiones</div>
-    </div>
+            <div class="version-picker" id="versionPicker">
+                <div class="version-loading">Cargando versiones</div>
+            </div>
 
-    <div class="version-detail" id="versionDetail">
-        <div class="version-loading">Cargando detalles</div>
-    </div>
-</div>
+            <div class="version-detail" id="versionDetail">
+                <div class="version-loading">Cargando detalles</div>
+            </div>
+        </div>
+
+        <!-- VERSIÓN ACTUAL Y DESCARGA -->
         <div class="version-section" id="descargar">
             <div class="version-info">
                 <span class="tag">📌 VERSIÓN</span>
@@ -1262,159 +1256,170 @@
             console.log('🎉 PWA instalada.');
             deferredPrompt = null;
         });
+
         // ============ HISTORIAL DE VERSIONES (lee CHANGELOG.md) ============
-(async () => {
-    const picker = document.getElementById('versionPicker');
-    const detail = document.getElementById('versionDetail');
+        (async () => {
+            const picker = document.getElementById('versionPicker');
+            const detail = document.getElementById('versionDetail');
 
-    if (!picker || !detail) return;
+            if (!picker || !detail) return;
 
-    // Enlaces de descarga por versión
-    const DOWNLOAD_LINKS = {
-        'V2': 'https://drive.google.com/file/d/1de7nj_RgY870lfyF6xfqnPIWNGjPWJrb/view?usp=drivesdk',
-        'V1': 'https://drive.google.com/file/d/TU_LINK_V1/view',   // ← reemplaza con el link real
-        'V0.1': null                                                // ← sin descarga
-    };
+            // Enlaces de descarga por versión
+            const DOWNLOAD_LINKS = {
+                'V2': 'https://drive.google.com/file/d/1de7nj_RgY870lfyF6xfqnPIWNGjPWJrb/view?usp=drivesdk',
+                'V1': 'https://drive.google.com/file/d/1Ua0-AkPX7PCkbjRzYfHDdmhol2DjuIBl/view?usp=drivesdk',
+                'V0.1': null
+            };
 
-    // Marca la versión actual (para estilos y lógica)
-    const CURRENT_VERSION = 'V2';
+            // Marca la versión actual (para estilos y lógica)
+            const CURRENT_VERSION = 'V2';
 
-    try {
-        const response = await fetch('CHANGELOG.md');
-        if (!response.ok) throw new Error('No se pudo cargar CHANGELOG.md');
+            // Versiones "meta" que NO queremos mostrar en el selector
+            const SKIP_VERSIONS = ['sin publicar', 'unreleased'];
 
-        const markdown = await response.text();
-        const versions = parseChangelog(markdown);
+            try {
+                const response = await fetch('CHANGELOG.md');
+                if (!response.ok) throw new Error('No se pudo cargar CHANGELOG.md');
 
-        if (versions.length === 0) {
-            picker.innerHTML = '<div class="version-loading">Sin versiones registradas</div>';
-            detail.innerHTML = '<div class="version-loading">Sin detalles disponibles</div>';
-            return;
-        }
+                const markdown = await response.text();
+                const versions = parseChangelog(markdown);
 
-        // Genera los botones del selector
-        picker.innerHTML = '';
-        versions.forEach((v, i) => {
-            const btn = document.createElement('button');
-            btn.textContent = v.version;
-            btn.dataset.version = v.version;
-            if (i === 0) btn.classList.add('active');
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.version-picker button').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                renderVersion(v);
-            });
-            picker.appendChild(btn);
-        });
+                if (versions.length === 0) {
+                    picker.innerHTML = '<div class="version-loading">Sin versiones registradas</div>';
+                    detail.innerHTML = '<div class="version-loading">Sin detalles disponibles</div>';
+                    return;
+                }
 
-        // Muestra la primera versión (la más reciente)
-        renderVersion(versions[0]);
-
-        function renderVersion(v) {
-            const downloadUrl = DOWNLOAD_LINKS[v.version];
-            const isCurrent = v.version === CURRENT_VERSION;
-
-            let downloadHTML = '';
-            if (downloadUrl) {
-                const cls = isCurrent ? 'version-download current' : 'version-download old';
-                const label = isCurrent ? '⬇️ Descargar versión actual' : `⬇️ Descargar ${v.version}`;
-                downloadHTML = `<a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="${cls}">${label}</a>`;
-            } else {
-                downloadHTML = `<span class="version-download old" style="cursor:default; opacity:0.6;">🚫 Sin descarga disponible</span>`;
-            }
-
-            let html = `<h3>${v.version} <span class="version-date">${v.date}</span></h3>`;
-
-            if (v.sections.length === 0) {
-                html += '<p>Sin cambios documentados.</p>';
-            } else {
-                v.sections.forEach(section => {
-                    const icon = getSectionIcon(section.title);
-                    html += `<h4>${icon} ${section.title} <span class="badge">${section.items.length}</span></h4>`;
-                    html += '<ul>';
-                    section.items.forEach(item => {
-                        html += `<li>${formatItem(item)}</li>`;
+                // Genera los botones del selector
+                picker.innerHTML = '';
+                versions.forEach((v, i) => {
+                    const btn = document.createElement('button');
+                    btn.textContent = v.version;
+                    btn.dataset.version = v.version;
+                    if (i === 0) btn.classList.add('active');
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.version-picker button').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        renderVersion(v);
                     });
-                    html += '</ul>';
+                    picker.appendChild(btn);
                 });
+
+                // Muestra la primera versión (la más reciente)
+                renderVersion(versions[0]);
+
+                function renderVersion(v) {
+                    const downloadUrl = DOWNLOAD_LINKS[v.version];
+                    const isCurrent = v.version === CURRENT_VERSION;
+
+                    let downloadHTML = '';
+                    if (downloadUrl) {
+                        const cls = isCurrent ? 'version-download current' : 'version-download old';
+                        const label = isCurrent ? '⬇️ Descargar versión actual' : `⬇️ Descargar ${v.version}`;
+                        downloadHTML = `<a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="${cls}">${label}</a>`;
+                    } else {
+                        downloadHTML = `<span class="version-download old" style="cursor:default; opacity:0.6;">🚫 Sin descarga disponible</span>`;
+                    }
+
+                    let html = `<h3>${v.version} <span class="version-date">${v.date}</span></h3>`;
+
+                    if (v.sections.length === 0) {
+                        html += '<p>Sin cambios documentados.</p>';
+                    } else {
+                        v.sections.forEach(section => {
+                            const icon = getSectionIcon(section.title);
+                            html += `<h4>${icon} ${section.title} <span class="badge">${section.items.length}</span></h4>`;
+                            html += '<ul>';
+                            section.items.forEach(item => {
+                                html += `<li>${formatItem(item)}</li>`;
+                            });
+                            html += '</ul>';
+                        });
+                    }
+
+                    html += downloadHTML;
+                    detail.innerHTML = html;
+                }
+
+            } catch (err) {
+                console.error('Error cargando CHANGELOG:', err);
+                picker.innerHTML = '<div class="version-loading">No se pudo cargar</div>';
+                detail.innerHTML = `
+                    <div class="version-loading" style="color:#ff6b6b;">
+                        ⚠️ No se pudo cargar el historial de versiones.<br>
+                        <small>${err.message}</small>
+                    </div>
+                `;
             }
 
-            html += downloadHTML;
-            detail.innerHTML = html;
-        }
+            // ====== Parser del CHANGELOG ======
+            function parseChangelog(md) {
+                const versions = [];
+                const lines = md.split('\n');
+                let currentVersion = null;
+                let currentSection = null;
 
-    } catch (err) {
-        console.error('Error cargando CHANGELOG:', err);
-        picker.innerHTML = '<div class="version-loading">No se pudo cargar</div>';
-        detail.innerHTML = `
-            <div class="version-loading" style="color:#ff6b6b;">
-                ⚠️ No se pudo cargar el historial de versiones.<br>
-                <small>${err.message}</small>
-            </div>
-        `;
-    }
+                for (let line of lines) {
+                    // Detecta encabezados de versión: ## [V2] - 2026
+                    const versionMatch = line.match(/^##\s+\[?([^\]]+)\]?\s*(?:-\s*(.+))?$/);
+                    if (versionMatch) {
+                        const name = versionMatch[1].trim();
+                        const date = (versionMatch[2] || '').trim() || 'Sin fecha';
 
-    // ====== Parser del CHANGELOG ======
-    function parseChangelog(md) {
-        const versions = [];
-        const lines = md.split('\n');
-        let currentVersion = null;
-        let currentSection = null;
+                        // Salta versiones meta como [Sin publicar]
+                        if (SKIP_VERSIONS.some(s => name.toLowerCase().includes(s))) {
+                            currentVersion = null;
+                            currentSection = null;
+                            continue;
+                        }
 
-        for (let line of lines) {
-            // Detecta encabezados de versión: ## [V2] - 2026
-            const versionMatch = line.match(/^##\s+\[?([^\]]+)\]?\s*(?:-\s*(.+))?$/);
-            if (versionMatch) {
-                const name = versionMatch[1].trim();
-                const date = (versionMatch[2] || '').trim() || 'Sin fecha';
+                        currentVersion = { version: name, date, sections: [] };
+                        versions.push(currentVersion);
+                        currentSection = null;
+                        continue;
+                    }
 
-                // Ignora secciones meta como [Sin publicar] si quieres, o las deja
-                currentVersion = { version: name, date, sections: [] };
-                versions.push(currentVersion);
-                currentSection = null;
-                continue;
+                    // Detecta subsecciones: ### Añadido, ### Corregido, etc.
+                    const sectionMatch = line.match(/^###\s+(.+)$/);
+                    if (sectionMatch && currentVersion) {
+                        currentSection = { title: sectionMatch[1].trim(), items: [] };
+                        currentVersion.sections.push(currentSection);
+                        continue;
+                    }
+
+                    // Detecta items: - algo
+                    const itemMatch = line.match(/^-\s+(.+)$/);
+                    if (itemMatch && currentSection) {
+                        currentSection.items.push(itemMatch[1].trim());
+                    }
+                }
+
+                return versions;
             }
 
-            // Detecta subsecciones: ### Añadido, ### Corregido, etc.
-            const sectionMatch = line.match(/^###\s+(.+)$/);
-            if (sectionMatch && currentVersion) {
-                currentSection = { title: sectionMatch[1].trim(), items: [] };
-                currentVersion.sections.push(currentSection);
-                continue;
+            // Iconos según el tipo de sección
+            function getSectionIcon(title) {
+                const t = title.toLowerCase();
+                if (t.includes('añadido') || t.includes('agregado')) return '➕';
+                if (t.includes('cambiado')) return '🔄';
+                if (t.includes('corregido')) return '🐛';
+                if (t.includes('eliminado')) return '🗑️';
+                if (t.includes('obsoleto')) return '⚠️';
+                if (t.includes('seguridad')) return '🔒';
+                if (t.includes('próximamente') || t.includes('proximamente')) return '🔮';
+                if (t.includes('notas') || t.includes('nota')) return '📝';
+                return '📌';
             }
 
-            // Detecta items: - algo
-            const itemMatch = line.match(/^-\s+(.+)$/);
-            if (itemMatch && currentSection) {
-                currentSection.items.push(itemMatch[1].trim());
+            // Formatea el texto de cada item (negritas, cursivas, enlaces, código)
+            function formatItem(text) {
+                return text
+                    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+                    .replace(/`(.+?)`/g, '<code>$1</code>');
             }
-        }
-
-        return versions;
-    }
-
-    // Iconos según el tipo de sección
-    function getSectionIcon(title) {
-        const t = title.toLowerCase();
-        if (t.includes('añadido') || t.includes('agregado')) return '➕';
-        if (t.includes('cambiado')) return '🔄';
-        if (t.includes('corregido')) return '🐛';
-        if (t.includes('eliminado')) return '🗑️';
-        if (t.includes('obsoleto')) return '⚠️';
-        if (t.includes('seguridad')) return '🔒';
-        if (t.includes('próximamente') || t.includes('proximamente')) return '🔮';
-        return '📌';
-    }
-
-    // Formatea el texto de cada item (negritas, cursivas, enlaces)
-    function formatItem(text) {
-        return text
-            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.+?)\*/g, '<em>$1</em>')
-            .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-            .replace(/`(.+?)`/g, '<code>$1</code>');
-    }
-})();
+        })();
     </script>
 </body>
-</html>
+                                                 </html>
