@@ -1,0 +1,35 @@
+name: ❓ Otro
+description: Para cualquier cosa que no encaje en las otras categorías
+title: ""
+labels: ["triage"]
+assignees:
+  - leonelb2840-design
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Si tu mensaje no encaja en ninguna de las otras categorías, usa este formulario. 🙌
+        
+        Pero considera primero si tu mensaje podría ir en:
+        - 🐛 **Reportar un error** → si algo no funciona
+        - 💡 **Sugerir una mejora** → si tienes una idea
+        - 📦 **Aportar un recurso** → si traes contenido nuevo
+
+  - type: textarea
+    id: mensaje
+    attributes:
+      label: Cuéntanos
+      description: Escribe tu mensaje con el máximo detalle posible
+      placeholder: "Hola, quería comentaros que..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmaciones
+    attributes:
+      label: Confirmaciones
+      options:
+        - label: Mi mensaje respeta la [política de fans de Innersloth](https://www.innersloth.com/fan-creation-policy/)
+          required: true
+        - label: No estoy usando esto para spam o autopromoción no relacionada
+          required: true
