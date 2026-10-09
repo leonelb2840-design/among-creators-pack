@@ -17,6 +17,7 @@ const PRECACHE_URLS = [
   './manifest.json',
   './icon.png',
   './offline.html'
+  './CHANGELOG.md'
 ];
 
 const EXTERNAL_CACHEABLE = [
