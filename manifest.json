@@ -27,8 +27,8 @@
   ],
   "screenshots": [
     {
-      "src": "screenshot-mobile.png",
-      "sizes": "1080x1920",
+      "src": "screenshot-mobile.jpg",
+      "sizes": "720x1600",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Among Creators Pack en móvil"
