@@ -1,4 +1,5 @@
 {
+  "id": "/among-creators-pack/",
   "name": "Among Creators Pack",
   "short_name": "Among Creators",
   "description": "Pack de recursos para creadores de contenido de Among Us: memes, pinceles, plantillas, músicas, efectos, fondos, texturas, artes conceptuales y mucho más. Proyecto de fans bajo CC BY-SA y la política de Innersloth.",
@@ -21,24 +22,86 @@
       "purpose": "any maskable"
     }
   ],
+  "screenshots": [
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Among Creators Pack en móvil"
+    },
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Among Creators Pack en escritorio"
+    }
+  ],
   "shortcuts": [
     {
       "name": "Descargar V2",
       "short_name": "Descargar",
       "description": "Descargar la última versión del pack",
-      "url": "./index.html#descargar"
+      "url": "./index.html#descargar",
+      "icons": [
+        {
+          "src": "icon.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Enviar feedback",
       "short_name": "Feedback",
       "description": "Enviar sugerencias, reportes o calificación",
-      "url": "./index.html#feedback"
+      "url": "./index.html#feedback",
+      "icons": [
+        {
+          "src": "icon.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
     },
     {
       "name": "Gracias internas",
       "short_name": "Gracias",
       "description": "Agradecimientos internos del equipo",
-      "url": "./gracias.html"
+      "url": "./gracias.html",
+      "icons": [
+        {
+          "src": "icon.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=io.github.leonelb2840_design.twa",
+      "id": "io.github.leonelb2840_design.twa"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "auto"
+  },
+  "share_target": {
+    "action": "./index.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+amongcreators",
+      "url": "./index.html?protocol=%s"
     }
   ]
 }
