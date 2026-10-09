@@ -141,6 +141,96 @@
             letter-spacing: 1px;
         }
 
+        /* ===== SECCIÓN DISCORD ===== */
+        .discord-section {
+            background: linear-gradient(135deg, #1a1a3a, #0f0f28);
+            border-left: 6px solid #5865F2;
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 25px -8px black, 0 0 0 1px #2a2a5a inset;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .discord-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .discord-icon {
+            width: 56px;
+            height: 56px;
+            background: #5865F2;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.5);
+            flex-shrink: 0;
+        }
+
+        .discord-icon svg {
+            width: 34px;
+            height: 34px;
+            fill: white;
+        }
+
+        .discord-text h3 {
+            color: #c0c8ff;
+            font-size: 1.15rem;
+            margin-bottom: 0.2rem;
+            font-weight: 600;
+        }
+
+        .discord-text p {
+            color: #8a90c8;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .discord-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #5865F2;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            border: 1px solid #8a95ff;
+            box-shadow: 0 6px 0 #2a3a9a, 0 8px 20px black;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+
+        .discord-btn:hover {
+            background: #6a76f5;
+            transform: scale(1.03);
+            box-shadow: 0 6px 0 #2a3a9a, 0 12px 25px black;
+        }
+
+        .discord-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #2a3a9a, 0 8px 20px black;
+        }
+
+        .discord-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        /* ===== SECCIÓN DESCRIPCIÓN ===== */
         .description-section {
             background: rgba(0, 10, 25, 0.6);
             border-left: 6px solid #5a9eff;
@@ -208,17 +298,6 @@
 
         .description-text strong { color: #ffd966; }
         .description-text em { color: #b8d0ff; font-style: italic; }
-
-        .placeholder {
-            color: #8a9fc7;
-            font-style: italic;
-            background: rgba(90, 158, 255, 0.1);
-            padding: 0.2rem 0.6rem;
-            border-radius: 12px;
-            border: 1px dashed #3e7eff;
-            display: inline-block;
-            margin: 0.2rem 0;
-        }
 
         /* ===== SECCIÓN NOVEDADES ===== */
         .news-section {
@@ -455,6 +534,7 @@
 
         .policy-badge a:hover { color: #ffd6ff; border-bottom-color: #ffd6ff; }
 
+        /* ===== SECCIÓN FEEDBACK ===== */
         .feedback-section {
             margin-top: 2.5rem;
             background: linear-gradient(135deg, #0f1f1a, #0a1512);
@@ -468,7 +548,7 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: #8effc0;
             font-weight: 600;
             font-size: 1.1rem;
@@ -477,6 +557,74 @@
         }
 
         .feedback-header .icon { font-size: 1.8rem; filter: drop-shadow(0 0 10px #5eff9a); }
+
+        /* Aviso de las 3 vías de feedback */
+        .feedback-channels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.2rem;
+            background: rgba(42, 154, 90, 0.08);
+            border: 1px dashed rgba(94, 255, 154, 0.3);
+            border-radius: 1.2rem;
+        }
+
+        .feedback-channels-label {
+            width: 100%;
+            color: #a0e0c0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .feedback-channel {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.2s;
+            border: 1px solid;
+        }
+
+        .feedback-channel.web {
+            background: rgba(94, 255, 154, 0.1);
+            color: #8effc0;
+            border-color: #2a6a4a;
+        }
+
+        .feedback-channel.web:hover {
+            background: rgba(94, 255, 154, 0.2);
+            border-color: #5eff9a;
+        }
+
+        .feedback-channel.discord {
+            background: rgba(88, 101, 242, 0.1);
+            color: #c0c8ff;
+            border-color: #3a4a9a;
+        }
+
+        .feedback-channel.discord:hover {
+            background: rgba(88, 101, 242, 0.25);
+            border-color: #5865F2;
+        }
+
+        .feedback-channel.issues {
+            background: rgba(176, 106, 255, 0.1);
+            color: #d0a0ff;
+            border-color: #5a3a7a;
+        }
+
+        .feedback-channel.issues:hover {
+            background: rgba(176, 106, 255, 0.25);
+            border-color: #b06aff;
+        }
 
         .feedback-form { display: flex; flex-direction: column; gap: 1rem; }
 
@@ -968,6 +1116,9 @@
             .version-detail h3 { font-size: 1.2rem; }
             .version-picker button { font-size: 0.85rem; padding: 0.5rem 1rem; }
             .version-download { width: 100%; justify-content: center; }
+            .discord-section { padding: 1.5rem 1.2rem; flex-direction: column; text-align: center; }
+            .discord-info { justify-content: center; }
+            .discord-btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -982,6 +1133,23 @@
         <h1>Among Creators <span class="zip">Pack</span></h1>
         <div class="subhead">📦 archivo .zip · recursos para creadores · V2</div>
 
+        <!-- SECCIÓN DISCORD -->
+        <div class="discord-section">
+            <div class="discord-info">
+                <div class="discord-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                </div>
+                <div class="discord-text">
+                    <h3>Únete al servidor de Discord</h3>
+                    <p>Comunidad, soporte, novedades y feedback en tiempo real</p>
+                </div>
+            </div>
+            <a href="https://discord.gg/s24PZyMBmA" class="discord-btn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                Unirse
+            </a>
+        </div>
+
         <!-- DESCRIPCIÓN -->
         <div class="description-section">
             <div class="label">
@@ -989,7 +1157,7 @@
                 Descripción del proyecto
             </div>
             <div class="description-text">
-                <p><strong>Among Creators Pack</strong> es un paquete de recursos para creadores de contenido, enfocado principalmente en <strong>Among Us</strong>, aunque con el tiempo se ha ido expandiendo hacia otros ámbitos. Fue creado originalmente por <strong>leonelb2840-design(LeonelB2840)</strong>, con su desarrollo iniciado el <strong>19 de julio de 2026</strong> y su primera versión completa y oficial publicada entre el <strong>20 y el 24 de agosto de 2026</strong>.</p>
+                <p><strong>Among Creators Pack</strong> es un paquete de recursos para creadores de contenido, enfocado principalmente en <strong>Among Us</strong>, aunque con el tiempo se ha ido expandiendo hacia otros ámbitos. Fue creado originalmente por <strong>leonelb2840-design (LeonelB2840)</strong>, con su desarrollo iniciado el <strong>19 de julio de 2026</strong> y su primera versión completa y oficial publicada entre el <strong>20 y el 24 de agosto de 2026</strong>.</p>
 
                 <p>Entre los recursos que incluye encontrarás:</p>
 
@@ -1089,6 +1257,20 @@
                 Envíanos tu feedback
             </div>
 
+            <!-- Aviso de las 3 vías -->
+            <div class="feedback-channels">
+                <div class="feedback-channels-label">📬 3 formas de contactarnos</div>
+                <a href="#feedbackForm" class="feedback-channel web">
+                    💬 Formulario web
+                </a>
+                <a href="https://discord.gg/s24PZyMBmA" target="_blank" rel="noopener noreferrer" class="feedback-channel discord">
+                    🎮 Servidor de Discord
+                </a>
+                <a href="https://github.com/leonelb2840-design/among-creators-pack/issues/new/choose" target="_blank" rel="noopener noreferrer" class="feedback-channel issues">
+                    📋 Issues en GitHub
+                </a>
+            </div>
+
             <form class="feedback-form" id="feedbackForm" action="https://formspree.io/f/mppqppgb" method="POST">
                 <div class="form-row">
                     <div class="form-group">
@@ -1139,6 +1321,12 @@
 
                 <input type="hidden" name="_subject" value="Nuevo feedback - Among Creators Pack">
 
+                <!-- Honeypot anti-bots -->
+                <div style="position:absolute; left:-9999px;" aria-hidden="true">
+                    <label for="website">No rellenes este campo</label>
+                    <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
+
                 <button type="submit" class="feedback-submit" id="feedbackBtn">
                     <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                     <span id="feedbackBtnText">Enviar feedback</span>
@@ -1147,11 +1335,6 @@
                 <div class="feedback-note" id="feedbackNote">
                     🔒 Tu mensaje se enviará directamente por correo. No compartiremos tus datos.
                 </div>
-            
-<div style="position:absolute; left:-9999px;" aria-hidden="true">
-    <label for="website">No rellenes este campo</label>
-    <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
-</div>
             </form>
         </div>
 
@@ -1427,4 +1610,4 @@
         })();
     </script>
 </body>
-                                                 </html>
+    </html>
