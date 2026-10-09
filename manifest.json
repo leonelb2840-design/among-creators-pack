@@ -7,6 +7,9 @@
   "dir": "ltr",
   "start_url": "./index.html",
   "scope": "./",
+  "scope_extensions": [
+  { "origin": "https://leonelb2840-design.github.io" }
+],
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui"],
   "orientation": "portrait-primary",
