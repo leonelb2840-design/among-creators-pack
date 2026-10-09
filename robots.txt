@@ -1,0 +1,24 @@
+# =========================================================
+# robots.txt · Among Creators Pack
+# =========================================================
+# Permite a los buscadores indexar la web del proyecto
+# pero bloquea archivos internos como agradecimientos.
+# =========================================================
+
+User-agent: *
+Allow: /
+
+# Bloquea los agradecimientos internos (no son para visitantes)
+Disallow: /gracias.html
+Disallow: /gracias.md
+
+# Bloquea el archivo de seguridad (por privacidad)
+Disallow: /.well-known/
+
+# Bloquea archivos de configuración
+Disallow: /manifest.json
+Disallow: /sw.js
+Disallow: /CHANGELOG.md
+
+# Sitemap para que Google encuentre todas las páginas
+Sitemap: https://leonelb2840-design.github.io/among-creators-pack/sitemap.xml
