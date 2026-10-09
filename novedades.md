@@ -1,1 +1,1 @@
-Nada por ahora, ve las novedades en tiempo real en nuestro Server de Discord
+**Nada por ahora, ve las novedades en tiempo real en nuestro Server de Discord**
