@@ -64,7 +64,6 @@ y este proyecto se adhiere a [Versionado Semántico](https://semver.org/lang/es/
 - 🎵 Músicas y efectos de sonido
 - 🖼️ Fondos y texturas para miniaturas
 - 👾 **Impostores Malditos** (única colaboración de impostores en esta versión)
-- 🎨 Primeras artes conceptuales
 
 ### Notas
 - Lanzamiento inicial tras ~1 mes de desarrollo desde el inicio del proyecto (19 de julio de 2026)
