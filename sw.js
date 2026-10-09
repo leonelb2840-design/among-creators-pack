@@ -142,7 +142,10 @@ self.addEventListener('fetch', (event) => {
   if (NEVER_CACHE.some(dominio => url.hostname.includes(dominio))) {
     return;
   }
-
+if (url.pathname.endsWith('.md')) {
+    event.respondWith(networkFirst(request, CACHE_CHANGELOG));
+    return;
+}
   // --- Fuentes de Google: Cache-First ---
   if (EXTERNAL_CACHEABLE.includes(url.hostname)) {
     event.respondWith(cacheFirst(request, CACHE_FONTS));
