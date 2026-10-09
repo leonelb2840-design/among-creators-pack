@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =========================================================
+     sitemap.xml · Among Creators Pack
+     =========================================================
+     Mapa del sitio para motores de búsqueda.
+     Actualiza la fecha de lastmod cuando hagas cambios.
+     ========================================================= -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Página principal -->
+    <url>
+        <loc>https://leonelb2840-design.github.io/among-creators-pack/</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Página de agradecimientos (índice bajo, es interna) -->
+    <url>
+        <loc>https://leonelb2840-design.github.io/among-creators-pack/gracias.html</loc>
+        <lastmod>2026-10-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
