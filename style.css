@@ -1326,3 +1326,87 @@ h1 .zip {
     .playlist-info { justify-content: center; }
     .playlist-btn { width: 100%; justify-content: center; }
 }
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(30, 40, 60, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(90, 150, 255, 0.4);
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 20px rgba(90, 150, 255, 0.5);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+body.light-mode {
+    background: radial-gradient(circle at 20% 30%, #eef3fa, #d0dae8);
+}
+
+body.light-mode::before {
+    opacity: 0.25;
+    filter: invert(1);
+}
+
+body.light-mode .card {
+    background: rgba(250, 252, 255, 0.9);
+    border-color: rgba(90, 150, 255, 0.4);
+    box-shadow: 0 30px 50px rgba(100, 130, 200, 0.25), 0 0 0 2px rgba(60, 130, 255, 0.1) inset;
+}
+
+body.light-mode h1 {
+    color: #1a2a4a;
+    text-shadow: 0 0 15px #9ac0ff, 0 0 5px #c0d8ff;
+}
+
+body.light-mode .subhead {
+    color: #5a6a8a;
+    border-bottom-color: rgba(60, 90, 150, 0.3);
+}
+
+body.light-mode .footer-note {
+    color: #5a6a8a;
+    border-top-color: rgba(60, 90, 150, 0.2);
+}
+
+body.light-mode .footer-note .dot {
+    background: #3a6ac0;
+    box-shadow: 0 0 8px #3a6ac0;
+}
+
+body.light-mode .internal-link {
+    color: #5a6a8a;
+    border-color: rgba(60, 90, 150, 0.3);
+}
+
+body.light-mode .internal-link:hover {
+    color: #3a5ac0;
+    border-color: #3a5ac0;
+    background: rgba(60, 90, 200, 0.08);
+}
+
+body.light-mode .theme-toggle {
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a2a4a;
+    border-color: rgba(90, 150, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(100, 130, 200, 0.3);
+}
