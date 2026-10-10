@@ -1,4 +1,4 @@
----
+<hr>
 
 # 🎬 LikeTheTrailers+
 
@@ -31,8 +31,8 @@
 
 **(Próximamente)**
 
----
+———
 
 [🗣️ Únete a la comunidad de Discord Oficial](https://discord.gg/Znhfhqw75Y)
 
----
+<hr>
