@@ -46,3 +46,4 @@
 > Si quieres promocionar un server, también puedes, y si quieres, ¿por qué no compartir tus dibujos en el foro de arte?
 > ## ¿Qué esperas? **[Únete a esta hermosa multi comunidad](https://discord.gg/jT258BHeWy)🌹**.
 
+<hr>
