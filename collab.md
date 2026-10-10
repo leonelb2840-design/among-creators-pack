@@ -26,6 +26,8 @@
 
 - [🧩 MCPEDL](https://mcpedl.com/likethetrailers/)
 - [🔨 Curseforge](https://www.curseforge.com/minecraft-bedrock/texture-packs/likethetrailers)
+- [🧊 CubitosMC](https://www.cubitosmc.com/2026/06/likethetrailers.html?m=1)
+- [🌎 Planet Minecraft](https://www.planetminecraft.com/texture-pack/likethetrailers-7051984/)
 
 ### Minecraft Java Edition
 
