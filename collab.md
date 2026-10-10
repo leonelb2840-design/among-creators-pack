@@ -37,7 +37,7 @@
 
 <hr>
 
-# !🫒 BIENVENIDOS AL  CREATORS MULTIVERSE 🫒 !
+# !🫒 CREATORS__MULTIVERSE 🫒 !
 
 > El 🌱 CREATORS MULTIVERSE 🌱  es un servidor creado por **El Vegetal en YT**, el server es agradable y tiene mods activos, puedes quedar y jugar con amigos, publicar memes entre otras cosas siempre y cuando no rompas las reglas.
 > En este server puedes hacer muchas actividades.
