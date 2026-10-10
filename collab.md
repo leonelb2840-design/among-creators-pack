@@ -5,6 +5,7 @@
 ## 📖 Sobre el Proyecto
 
 > Es un paquete de texturas diseñado para transformar la experiencia visual de Minecraft, recreando la estética colorida, limpia y cinematográfica de los trailers y material promocional oficial de Mojang Studios.
+> 
 > Desarrollado con un enfoque en la calidad visual y la fluidez, LikeTheTrailers+ eleva el aspecto estético del juego sin alterar sus mecánicas ni la identificabilidad de los bloques tradicionales.
 
 ## 💫 Características Principales
