@@ -1380,6 +1380,39 @@
             .playlist-info { justify-content: center; }
             .playlist-btn { width: 100%; justify-content: center; }
         }
+.collab-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.collab-picker button {
+    background: rgba(142, 255, 160, 0.1);
+    border: 1px solid #2a6a3a;
+    border-radius: 50px;
+    padding: 0.55rem 1.3rem;
+    color: #8effa0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.collab-picker button:hover {
+    background: rgba(142, 255, 160, 0.25);
+    border-color: #8effa0;
+    transform: translateY(-2px);
+}
+
+.collab-picker button.active {
+    background: #2a9a5a;
+    border-color: #5eff9a;
+    color: white;
+    box-shadow: 0 0 20px rgba(94, 255, 154, 0.5);
+}
     </style>
 
     <!-- Librería para renderizar Markdown -->
