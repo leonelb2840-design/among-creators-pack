@@ -180,8 +180,10 @@ window.addEventListener('appinstalled', () => {
 
         return collabs.map(c => ({
             title: c.title,
-            shortName: c.title.replace(/^[^\p{L}\p{N}]+/u, '').trim().split(/\s+/)[0] || c.title,
-            markdown: c.lines.join('\n')
+            shortName: (() => {
+    const name = c.title.replace(/^[^\p{L}\p{N}]+/u, '').trim();
+    return name.length > 20 ? name.substring(0, 18) + '…' : name;
+})(),           markdown: c.lines.join('\n')
         }));
     }
 })();
