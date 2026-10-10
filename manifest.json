@@ -29,14 +29,14 @@
     {
       "src": "screenshot-mobile.jpg",
       "sizes": "720x1600",
-      "type": "image/png",
+      "type": "image/jpg",
       "form_factor": "narrow",
       "label": "Among Creators Pack en móvil"
     },
     {
-      "src": "screenshot-desktop.png",
+      "src": "screenshot-desktop.jpg",
       "sizes": "1280x722",
-      "type": "image/png",
+      "type": "image/jpg",
       "form_factor": "wide",
       "label": "Among Creators Pack en escritorio"
     }
