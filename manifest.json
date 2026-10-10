@@ -35,7 +35,7 @@
     },
     {
       "src": "screenshot-desktop.png",
-      "sizes": "1920x1080",
+      "sizes": "1280x722",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Among Creators Pack en escritorio"
