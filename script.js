@@ -335,3 +335,19 @@ window.addEventListener('appinstalled', () => {
             .replace(/`(.+?)`/g, '<code>$1</code>');
     }
 })();
+const themeToggle = document.getElementById('themeToggle');
+
+const savedTheme = localStorage.getItem('theme');
+const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+    document.body.classList.add('light-mode');
+    themeToggle.textContent = '☀️';
+}
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    themeToggle.textContent = isLight ? '☀️' : '🌙';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
