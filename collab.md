@@ -1,5 +1,3 @@
-<hr>
-
 # 🎬 LikeTheTrailers+
 
 ## 📖 Sobre el Proyecto
