@@ -23,10 +23,10 @@
 * Oportunidad de que su mascota este como referencia(y ellos también)
 * Mascota como Emoji
 
-## Para participar haz una publicación en  # 💡┇feedback con la etiqueta Mascota 
+## Para participar haz una publicación en  # 💡┇feedback con la etiqueta Mascota(Nota: si no tienes Discord publica en mi comunidad de YT) 
 
 
-## Para votar reaccionaran con una estrellita a la publicación
+## Para votar reaccionaran con una estrellita a la publicación(Nota: si no tienes Discord vota en YT)
 
 
 
