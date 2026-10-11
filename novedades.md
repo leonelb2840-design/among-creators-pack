@@ -37,8 +37,8 @@
 ## Web:
 * Tenemos APK Oficial
 
-### * [GitHub Releases](https://github.com/leonelb2840-design/among-creators-pack/releases/tag/1.0.0)
-### * [Komi Store(anteriormente GitHub Store)](https://github-store.org/app?repo=leonelb2840-design/among-creators-pack)
+### [GitHub Releases](https://github.com/leonelb2840-design/among-creators-pack/releases/tag/1.0.0)
+### [Komi Store(anteriormente GitHub Store)](https://github-store.org/app?repo=leonelb2840-design/among-creators-pack)
 
 ———
 
