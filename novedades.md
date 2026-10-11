@@ -43,5 +43,5 @@
 ———
 
 ## Pack:
-### * Posibilidades de aparecer en LikeTheTrailers+ Live
-### * Trabajando mayormente en Halloween
+### Posibilidades de aparecer en LikeTheTrailers+ Live
+### Trabajando mayormente en Halloween
